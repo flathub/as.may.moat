@@ -2,7 +2,7 @@ id: as.may.moat
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 base: org.godotengine.godot.BaseApp
-base-version: '4.3'
+base-version: '4.4'
 sdk: org.freedesktop.Sdk
 command: godot-runner
 
@@ -20,16 +20,16 @@ modules:
     sources:
       - type: git
         url: https://github.com/m4ym4y/museum-of-all-things.git
-        tag: v1.0.1
-        commit: 27c80a8a96efaa4a31ada0edd45240804a287f1d
+        tag: v1.1.0
+        commit: 3784cd2712fa82d021531f7c6f7dd032bc47d038
         x-checker-data:
           type: json
           url: https://api.github.com/repos/m4ym4y/museum-of-all-things/releases/latest
           tag-query: .tag_name
 
       - type: file
-        url: https://github.com/m4ym4y/museum-of-all-things/releases/download/v1.0.1/MuseumOfAllThings.pck
-        sha256: 631ad04d2f16e3cb9506397df135ffa1a8a5757261026a2ead875810a5134926
+        url: https://github.com/m4ym4y/museum-of-all-things/releases/download/v1.1.0/MuseumOfAllThings.pck
+        sha256: 3d8b03530ee4dfc767b97c0b7b8df3c3ecf4679c0fca875f669ec0a3fed9af66
         dest-filename: godot-runner.pck
         x-checker-data:
           type: json
