@@ -16,7 +16,11 @@ finish-args:
 modules:
   - name: MuseumOfAllThings
     buildsystem: simple
-
+    build-commands:
+      - install -Dm644 godot-runner.pck ${FLATPAK_DEST}/bin/godot-runner.pck
+      - install -Dm644 linux/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm644 linux/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
+      - install -Dm644 assets/logo/moat_logo_small.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
     sources:
       - type: git
         url: https://github.com/m4ym4y/museum-of-all-things.git
@@ -26,7 +30,6 @@ modules:
           type: json
           url: https://api.github.com/repos/m4ym4y/museum-of-all-things/releases/latest
           tag-query: .tag_name
-
       - type: file
         url: https://github.com/m4ym4y/museum-of-all-things/releases/download/v1.1.0/MuseumOfAllThings.pck
         sha256: 3d8b03530ee4dfc767b97c0b7b8df3c3ecf4679c0fca875f669ec0a3fed9af66
@@ -38,8 +41,3 @@ modules:
           url-query: '"https://github.com/m4ym4y/museum-of-all-things/releases/download/"
             + $version + "/MuseumOfAllThings.pck"'
 
-    build-commands:
-      - install -Dm644 godot-runner.pck ${FLATPAK_DEST}/bin/godot-runner.pck
-      - install -Dm644 linux/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      - install -Dm644 linux/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
-      - install -Dm644 assets/logo/moat_logo_small.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
